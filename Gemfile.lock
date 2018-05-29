@@ -1,0 +1,16 @@
+GEM
+  specs:
+    addressable (2.4.0)
+    awesome_print (1.7.0)
+    trollop (2.1.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  addressable
+  awesome_print
+  trollop
+
+BUNDLED WITH
+   1.16.1
