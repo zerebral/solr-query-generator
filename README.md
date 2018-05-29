@@ -3,16 +3,16 @@ A custom search query generator for Solr - used for load testing Solr
 
 Usage: 
 
-ruby lib/generator.rb --solr-endpoint http://10.20.30.40:8983/solr/your_collection_name/select \
+```ruby lib/generator.rb --solr-endpoint http://10.20.30.40:8983/solr/your_collection_name/select \
                      --output-path ~/out \ 
                      --min-year 2013 \
                      --search-level=make,model,year \ 
                      --build-geospatial \
                      --min-geospatial-distance 75
-                     
-Available command line parameter are - 
-'''Options:
-  -o, --output-size=<i>                            Size of the output sample set (default: 100)
+```                
+Available command line parameter are  
+Options:
+```  -o, --output-size=<i>                            Size of the output sample set (default: 100)
   -s, --solr-endpoint=<s>                          Solr endpoint base url
   -b, --build-geospatial, --no-build-geospatial    Flag indicating whether to build geospatial queries or not (default: true)
   -f, --facet-fields=<s>                           List of fields to generate facets for (default: make_ss,model_ss,trim_ss,trim_r_ss,tramsmission_ss,interior_color_ss,exterior_color_ss)
@@ -28,6 +28,6 @@ Available command line parameter are -
   -w, --rows=<i>                                   Rows to return for Search API call (default: 25)
   -a, --start=<i>                                  Start offset to return results for Search API call from (default: 0)
   -h, --help                                       Show this message
-'''
+```
               
 Most of these parameters are generic enough to be applied to any Solr collection.
