@@ -23,6 +23,7 @@ require "uri"
   opt "fl", "Solr output field list - fl parameter", :type => :string, :default => ""
   opt "rows", "Rows to return for Search API call", :type => :integer, :default => 25
   opt "start", "Start offset to return results for Search API call from", :type => :integer, :default => 0
+  opt "scope-make", "Use make values from this set only", :type => :string
 end
 
 ap @opts
@@ -35,6 +36,7 @@ while true do
   line = CSV.parse(ymm_data.sample.gsub("\n", ""))[0] rescue next
 
   next if @opts["min-year"] && (line[0].to_i < @opts["min-year"])
+  next if @opts["scope-make"] && !@opts["scope-make"].downcase.include?(line[1].strip.downcase)
 
   q = generate_solr_query(line) rescue next
   ap q
