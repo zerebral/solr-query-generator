@@ -14,6 +14,8 @@ ruby lib/generator.rb --solr-endpoint http://10.20.30.40:8983/solr/your_collecti
 Available command line parameter are  
 Options:
 ```  
+➜  solr-query-generator git:(master) ruby lib/generator.rb --help
+Options:
   -o, --output-size=<i>                            Size of the output sample set (default: 100)
   -s, --solr-endpoint=<s>                          Solr endpoint base url
   -b, --build-geospatial, --no-build-geospatial    Flag indicating whether to build geospatial queries or not (default: true)
@@ -29,7 +31,9 @@ Options:
   -l, --fl=<s>                                     Solr output field list - fl parameter (default: )
   -w, --rows=<i>                                   Rows to return for Search API call (default: 25)
   -a, --start=<i>                                  Start offset to return results for Search API call from (default: 0)
+  -c, --scope-make=<s>                             Use make values from this set only
   -h, --help                                       Show this message
+
 ```
               
 Most of these parameters are generic enough to be applied to any Solr collection.
